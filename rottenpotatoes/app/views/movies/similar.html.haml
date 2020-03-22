@@ -1,0 +1,20 @@
+%h2= "Find Movies Directed by #{@movies_with_director[:director]}"
+
+%table
+  %thead
+    %tr
+      %th Movie Title
+      %th Rating
+      %th Director
+      %th Release Date
+      %th More Info
+  %thead
+  
+  %tbody
+    - @movies_with_director[:movies].each do |movie|
+      %tr
+        %td= movie.title
+        %td= movie.rating
+        %td= movie.director
+        %td= movie.release_date
+        %td= link_to "More about #{movie.title}", movie_path(movie)
