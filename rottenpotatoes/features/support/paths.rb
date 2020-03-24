@@ -28,6 +28,9 @@ module NavigationHelpers
       
       when /^the Similar Movies page for "(.*)"$/
         similar_movie_path(Movie.find_by_title($1))
+      
+      when /^the Create New Movie page/
+        new_movie_path() 
 
     else
       begin
